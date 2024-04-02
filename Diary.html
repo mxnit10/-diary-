@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=428, height=926, initial-scale=1">
+<title>Diary Question</title>
+<style>
+  body {
+    font-family: 'Playfair Display', serif; /* Updated font family */
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    margin-top: 50px;
+  }
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    width: 120px;
+  }
+  .button.yes {
+    background-color: #55efc4;
+    color: #2d3436;
+  }
+  .button.no {
+    background-color: #2d3436;
+    color: #55efc4;
+  }
+  .quote {
+    font-family: 'Playfair Display', serif; /* Updated font family */
+    color: #104176;
+    font-size: 36px;
+    margin-top: 20px;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <h2>Did you read the diary?</h2>
+  <button class="button yes" onclick="showThanks()">Yes</button>
+  <button class="button no" onclick="showMessage()">No</button>
+</div>
+
+<script>
+  function showMessage() {
+    document.querySelector('.container').innerHTML = `
+      <h2>Then what are you doing here?</h2>
+      <p>Go finish the diary and come back!</p>
+    `;
+  }
+
+  function showThanks() {
+    document.querySelector('.container').innerHTML = `
+      <h2>Thanks a lot!</h2>
+      <button class="button" onclick="showMessageFromDiary()">Click Here</button>
+    `;
+  }
+
+  function showMessageFromDiary() {
+    document.querySelector('.container').innerHTML = `
+      <p class="quote">Hey, just wanted you to know that you've got a permanent shoulder to lean on, no matter what. Life can get weird sometimes, but through thick and thin, I'm always down to listen, celebrate, or just goof off. You're an awesome friend, and that's not changing anytime soon.</p>
+    `;
+  }
+</script>
+</body>
+</html>
